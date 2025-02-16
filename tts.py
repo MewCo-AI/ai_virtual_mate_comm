@@ -7,6 +7,12 @@ import pygame as pg
 import numpy as np
 from function import *
 
+import json
+import requests
+from threading import Thread
+# Configure the OpenAI-compatible (AllTalk) TTS endpoint URL (change IP and port as needed)
+openai_tts_url = f"http://192.168.1.14:7851/v1/audio/speech"
+
 voice_path = 'data/cache/cache_voice'
 try:
     engine = pyttsx3.init()
@@ -23,6 +29,42 @@ edge_speaker_mapping = {"晓艺-年轻女声": "zh-CN-XiaoyiNeural", "晓晓-成
                         "晓辰-台湾话年轻女声": "zh-TW-HsiaoChenNeural", "晓宇-台湾话成稳女声": "zh-TW-HsiaoYuNeural",
                         "云哲-台湾话男声": "zh-TW-YunJheNeural", "佳太-日语男声": "ja-JP-KeitaNeural"}
 edge_select_speaker = edge_speaker_mapping.get(edge_speaker, "ja-JP-NanamiNeural")
+
+def generate_openai_tts(text: str, voice: str = "nova", speed: float = 1.0,
+                          model: str = "any_model_name", response_format: str = "wav") -> bool:
+    """
+    Call the OpenAI-compatible (AllTalk) TTS endpoint to generate speech audio.
+    
+    Parameters:
+        text: The text input (max 4096 characters).
+        voice: The voice to use. Supported values: 'alloy', 'echo', 'fable', 'nova', 'onyx', 'shimmer'.
+        speed: Playback speed (between 0.25 and 4.0; default 1.0).
+        model: Model identifier (currently ignored but required).
+        response_format: Audio format (e.g. 'wav').
+
+    Returns:
+        True if audio was successfully saved, False otherwise.
+    """
+    payload = {
+        "model": model,
+        "input": text,
+        "voice": voice,
+        "response_format": response_format,
+        "speed": speed
+    }
+    headers = {"Content-Type": "application/json"}
+    try:
+        resp = requests.post(openai_tts_url, data=json.dumps(payload), headers=headers)
+        if resp.status_code == 200:
+            with open(voice_path, "wb") as f:
+                f.write(resp.content)
+            return True
+        else:
+            notice(f"Error: {resp.status_code} - {resp.text}")
+            return False
+    except Exception as e:
+        notice(f"OpenAI TTS request error: {e}")
+        return False
 
 
 def play_voice():  # 播放语音
@@ -94,6 +136,11 @@ def get_tts_play_live2d(text):  # 获取并播放语音
                 play_voice()
             except:
                 notice("您的电脑暂不支持pyttsx3，可选择其他语音合成引擎")
+        elif tts_menu.get() == "OpenAI TTS":
+            # Use the new OpenAI-compatible API endpoint
+            # You can customize the voice and speed here if desired.
+            if generate_openai_tts(text, voice="nova", speed=1.0):
+                play_voice()
     except:
         notice(f"{tts_menu.get()}不可用，可选择其他语音合成引擎")
 
