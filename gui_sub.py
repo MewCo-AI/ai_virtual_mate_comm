@@ -201,7 +201,7 @@ llm_menu = ttk.Combobox(root, textvariable=llm_var, values=llm_options, height=1
                         justify='center')
 llm_menu.place(relx=0.02, rely=0.57)
 Label(root, text="🔊语音合成引擎", bg="#EEFFFF").place(relx=0.02, rely=0.65)
-tts_options = ["云端edge-tts", "云端百度TTS", "本地GPT-SoVITS", "本地CosyVoice", "本地Kokoro-TTS", "本地pyttsx3",
+tts_options = ["云端edge-tts", "云端百度TTS", "本地GPT-SoVITS", "本地CosyVoice", "本地Kokoro-TTS", "本地pyttsx3","OpenAI TTS",
                "关闭语音合成"]
 tts_var = StringVar(root)
 tts_var.set(prefer_tts)
