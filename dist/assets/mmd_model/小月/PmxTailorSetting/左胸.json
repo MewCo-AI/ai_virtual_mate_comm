@@ -1,0 +1,21 @@
+{
+    "material_name": "03_Tops_02",
+    "abb_name": "左胸",
+    "parent_bone_name": "上半身3",
+    "group": "1",
+    "direction": "下",
+    "primitive": "胸(大)",
+    "exist_physics_clear": "再利用",
+    "target_bones": [
+        [
+            "左胸",
+            "左胸先"
+        ]
+    ],
+    "back_extend_material_names": [
+        "03_Tops_02_エッジ",
+        "03_Tops_02_裏"
+    ],
+    "rigidbody_root_thick": 0.5,
+    "rigidbody_end_thick": 0.5
+}

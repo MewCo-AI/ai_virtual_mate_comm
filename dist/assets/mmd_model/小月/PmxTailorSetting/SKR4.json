@@ -1,0 +1,27 @@
+{
+    "material_name": "03_Tops_05",
+    "abb_name": "SKR4",
+    "parent_bone_name": "右足",
+    "group": "8",
+    "direction": "下",
+    "primitive": "単一揺れ物",
+    "exist_physics_clear": "再利用",
+    "target_bones": [
+        [
+            "装飾_10-02_Sec_R_SkirtSide1_05",
+            "装飾_10-03_Sec_R_SkirtSide2_05",
+            "装飾_10-04_Sec_R_SkirtSide2_end_05"
+        ],
+        [
+            "装飾_36-02_Sec_R_SkirtFront1_05",
+            "装飾_36-03_Sec_R_SkirtFront2_05",
+            "装飾_36-04_Sec_R_SkirtFront2_end_05"
+        ]
+    ],
+    "back_extend_material_names": [
+        "03_Tops_05_エッジ",
+        "03_Tops_05_裏"
+    ],
+    "rigidbody_root_thick": 0.35,
+    "rigidbody_end_thick": 0.5
+}
