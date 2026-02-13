@@ -1,8 +1,8 @@
-# 枫云AI虚拟伙伴Web版
+# 枫云AI虚拟伙伴社区版
 
-![GitHub license](https://img.shields.io/github/license/swordswind/ai_virtual_mate_web?style=flat-square) ![GitHub stars](https://img.shields.io/github/stars/swordswind/ai_virtual_mate_web?style=flat-square) ![GitHub forks](https://img.shields.io/github/forks/swordswind/ai_virtual_mate_web?style=flat-square)
+![GitHub license](https://img.shields.io/github/license/MewCo-AI/ai_virtual_mate_comm?style=flat-square) ![GitHub stars](https://img.shields.io/github/stars/MewCo-AI/ai_virtual_mate_comm?style=flat-square) ![GitHub forks](https://img.shields.io/github/forks/MewCo-AI/ai_virtual_mate_comm?style=flat-square)
 
-**枫云AI虚拟伙伴Web版**是一个由**MewCo-AI**开源的高自由度的网页二次元AI数字人框架，现已升级至4.0版本。支持声纹识别语音交互、文本对话、语音合成、图像识别、桌宠模式、Live2D/MMD/VRM 3D角色展示、多智能体助手等功能。用户可以通过Web界面或桌宠与虚拟伙伴进行互动，虚拟伙伴能够根据用户的输入进行智能回复，并支持多种语言模型和语音合成引擎。
+**枫云AI虚拟伙伴社区版(原Web版)**是一个由**MewCo-AI**开源的高自由度的网页二次元AI数字人框架，现已升级至4.0版本。支持声纹识别语音交互、文本对话、语音合成、图像识别、桌宠模式、Live2D/MMD/VRM 3D角色展示、多智能体助手等功能。用户可以通过Web界面或桌宠与虚拟伙伴进行互动，虚拟伙伴能够根据用户的输入进行智能回复，并支持多种语言模型和语音合成引擎。
 
 ![](data/image/logo.png)
 
@@ -59,7 +59,7 @@
    首先，确保您已经安装了Git和Anaconda/Miniconda。然后，打开命令行窗口并运行以下命令来克隆仓库：
 
    ```bash
-   git clone https://github.com/swordswind/ai_virtual_mate_web.git 
+   git clone https://github.com/MewCo-AI/ai_virtual_mate_comm.git 
    cd ai_virtual_mate_web
    ```
 
@@ -218,7 +218,8 @@ ai_virtual_mate_web/
 
 如有任何问题或建议，请联系开发者团队：
 
-- **Email**: swordswind@qq.com
-- **GitHub**: [swordswind](https://github.com/swordswind)
+- **Email**: mewcoai@foxmail.com
+- **GitHub**: [MewCo-AI](https://github.com/MewCo-AI)
 - **项目主页**: https://swordswind.github.io/2024/07/09/mateweb/
-- **GitHub仓库**: https://github.com/swordswind/ai_virtual_mate_web
+
+- **GitHub仓库**: https://github.com/MewCo-AI/ai_virtual_mate_comm
